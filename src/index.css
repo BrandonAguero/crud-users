@@ -1,6 +1,7 @@
 :root {
   --title-font: "Montserrat", sans-serif;
   --paragraph-font: "Merriweather", serif;
+  --first-color: #fbfcfb;
 }
 
 * {
@@ -11,7 +12,7 @@
 body {
   font-family: "Merriweather", serif;
   font-family: "Montserrat", sans-serif;
-  background-color: red;
+  background-color: var(--first-color);
 }
 html {
   font-size: 62.5%;

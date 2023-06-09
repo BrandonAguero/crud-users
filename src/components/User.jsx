@@ -18,7 +18,7 @@ const User = ({
   };
 
   return (
-    <div>
+    <section>
       <h5>
         {user.first_name} {user.last_name}
       </h5>
@@ -41,11 +41,11 @@ const User = ({
           <i
             onClick={handleUpdateUser}
             className="bx bx-edit-alt"
-            style={{ color: "#d3d3d3", cursor: "pointer" }}
+            style={{ color: "#BDBDBD", cursor: "pointer" }}
           ></i>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

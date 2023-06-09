@@ -10,3 +10,99 @@
 .show-section-create {
   display: fixed;
 }
+
+.header {
+  width: 100%;
+  min-width: 32rem;
+  display: flex;
+  justify-content: center;
+}
+.header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  width: 90%;
+}
+.header > div h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: var(--title-font);
+}
+.header > div button {
+  width: 40%;
+  background-color: #555a88;
+  cursor: pointer;
+  border: none;
+  color: var(--first-color);
+  font-size: 1.5rem;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+}
+.main {
+  margin-top: 4rem;
+  width: 100%;
+  min-width: 32rem;
+  display: flex;
+  justify-content: center;
+}
+.main .main__div {
+  width: 90%;
+  height: 20em;
+  display: flex;
+  gap: 2rem;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+.main .main__div > section {
+  min-width: 100%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main .main__div > section h5 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+.main .main__div > section h6 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: #d3d3d3;
+  text-transform: uppercase;
+}
+.main .main__div > section > div:first-of-type {
+  width: 90%;
+  height: 0.1em;
+  background-color: #e5e5e5;
+}
+.main .main__div > section p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #302f2f;
+  font-family: var(--paragraph-font);
+}
+.main .main__div > section > div:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+}
+.main .main__div > section > div:last-of-type div {
+  display: flex;
+  gap: 2rem;
+}
+.main .main__div > section > div:last-of-type div i {
+  font-size: 3rem;
+  padding: 0.15em;
+}
+.main .main__div > section > div:last-of-type div i:first-of-type {
+  background-color: #d85d5d;
+  border: 0.1em solid #d93f3f;
+}
+.main .main__div > section > div:last-of-type div i:last-of-type {
+  background-color: #f7f7f7;
+  border: 0.1em solid gray;
+}

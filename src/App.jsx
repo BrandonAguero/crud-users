@@ -22,43 +22,36 @@ function App() {
     getUsers("/users/");
   }, []);
 
-  console.log(allUsers);
-
   const handleOpenCreateUser = () => {
     setOpenSectionCreate("show-section-create");
   };
 
   return (
     <>
-      <header>
-        <h1>Users</h1>
-        <button onClick={handleOpenCreateUser}>
-          <i className="bx bx-plus" style={{ color: "color:#ffffff" }}></i>
-          Crear nuevo usuario
-        </button>
-        <div className={`${openSectionCreate}`}>
-          <FormUser
-            createNewUser={createNewUser}
-            updateInfoUser={updateInfoUser}
-            setUpdateInfoUser={setUpdateInfoUser}
-            updateUser={updateUser}
-            setOpenSectionCreate={setOpenSectionCreate}
-          />
+      <header className="header">
+        <div>
+          <h1>Users</h1>
+          <button onClick={handleOpenCreateUser}>
+            <i className="bx bx-plus" style={{ color: "color:#ffffff" }}></i>
+            Crear nuevo usuario
+          </button>
         </div>
       </header>
-      <section>
-        {allUsers?.map((user) => (
-          <User
-            key={user.id}
-            user={user}
-            removeUser={removeUser}
-            setDataUserRemove={setDataUserRemove}
-            setClassDelete={setClassDelete}
-            setUpdateInfoUser={setUpdateInfoUser}
-            setOpenSectionCreate={setOpenSectionCreate}
-          />
-        ))}
-      </section>
+      <main className="main">
+        <div className="main__div">
+          {allUsers?.map((user) => (
+            <User
+              key={user.id}
+              user={user}
+              removeUser={removeUser}
+              setDataUserRemove={setDataUserRemove}
+              setClassDelete={setClassDelete}
+              setUpdateInfoUser={setUpdateInfoUser}
+              setOpenSectionCreate={setOpenSectionCreate}
+            />
+          ))}
+        </div>
+      </main>
       <div className={`${classDelete}`}>
         {dataUserRemove?.map((dataRemoved) => (
           <UserDeleteMessage
@@ -69,6 +62,15 @@ function App() {
             classDelete={classDelete}
           />
         ))}
+      </div>
+      <div className={`${openSectionCreate}`}>
+        <FormUser
+          createNewUser={createNewUser}
+          updateInfoUser={updateInfoUser}
+          setUpdateInfoUser={setUpdateInfoUser}
+          updateUser={updateUser}
+          setOpenSectionCreate={setOpenSectionCreate}
+        />
       </div>
     </>
   );
