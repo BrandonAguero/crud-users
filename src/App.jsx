@@ -44,6 +44,7 @@ function App() {
       <div className={`${classDelete}`}>
         {dataUserRemove?.map((dataRemoved) => (
           <UserDeleteMessage
+            key={dataRemoved.id}
             dataRemoved={dataRemoved}
             setDataUserRemove={setDataUserRemove}
             setClassDelete={setClassDelete}
