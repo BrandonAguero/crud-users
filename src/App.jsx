@@ -13,6 +13,7 @@ function App() {
 
   const [dataUserRemove, setDataUserRemove] = useState();
   const [classDelete, setClassDelete] = useState("hide-message-delete");
+  const [updateInfoUser, setUpdateInfoUser] = useState();
 
   useEffect(() => {
     getUsers("/users/");
@@ -22,7 +23,12 @@ function App() {
 
   return (
     <>
-      <FormUser createNewUser={createNewUser} />
+      <FormUser
+        createNewUser={createNewUser}
+        updateInfoUser={updateInfoUser}
+        setUpdateInfoUser={setUpdateInfoUser}
+        updateUser={updateUser}
+      />
       <section>
         {allUsers?.map((user) => (
           <User
@@ -31,6 +37,7 @@ function App() {
             removeUser={removeUser}
             setDataUserRemove={setDataUserRemove}
             setClassDelete={setClassDelete}
+            setUpdateInfoUser={setUpdateInfoUser}
           />
         ))}
       </section>

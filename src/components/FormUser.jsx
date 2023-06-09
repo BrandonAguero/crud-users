@@ -1,10 +1,26 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const FormUser = ({ createNewUser }) => {
+const FormUser = ({
+  createNewUser,
+  updateInfoUser,
+  setUpdateInfoUser,
+  updateUser,
+}) => {
   const { register, handleSubmit, reset } = useForm();
 
+  useEffect(() => {
+    reset(updateInfoUser);
+  }, [updateInfoUser]);
+
   const onSubmit = (data) => {
-    createNewUser("/users/", data);
+    if (updateInfoUser) {
+      updateUser("/users", data.id, data);
+      setUpdateInfoUser();
+    } else {
+      createNewUser("/users/", data);
+    }
+
     reset({
       first_name: "",
       last_name: "",

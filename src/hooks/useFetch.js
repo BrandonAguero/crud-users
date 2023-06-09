@@ -42,7 +42,7 @@ const useFetch = (baseUrl) => {
   };
 
   const updateItem = (path, id, data) => {
-    const url = `${baseUrl}${path}${id}`;
+    const url = `${baseUrl}${path}/${id}/`;
     axios
       .put(url, data)
       .then((res) => {

@@ -1,8 +1,18 @@
-const User = ({ user, removeUser, setDataUserRemove, setClassDelete }) => {
+const User = ({
+  user,
+  removeUser,
+  setDataUserRemove,
+  setClassDelete,
+  setUpdateInfoUser,
+}) => {
   const handleRemoveUser = () => {
     setDataUserRemove([user]);
     removeUser("/users/", user.id);
     setClassDelete("show-message-delete");
+  };
+
+  const handleUpdateUser = () => {
+    setUpdateInfoUser(user);
   };
 
   return (
@@ -27,6 +37,7 @@ const User = ({ user, removeUser, setDataUserRemove, setClassDelete }) => {
             style={{ color: "#ffffff", cursor: "pointer" }}
           ></i>
           <i
+            onClick={handleUpdateUser}
             className="bx bx-edit-alt"
             style={{ color: "#d3d3d3", cursor: "pointer" }}
           ></i>
