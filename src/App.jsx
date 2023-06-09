@@ -28,10 +28,6 @@ function App() {
     setOpenSectionCreate("show-section-create");
   };
 
-  const handleRemoveSection = () => {
-    setOpenSectionCreate("hide-section-create");
-  };
-
   return (
     <>
       <header>
@@ -41,12 +37,6 @@ function App() {
           Crear nuevo usuario
         </button>
         <div className={`${openSectionCreate}`}>
-          <i
-            onClick={handleRemoveSection}
-            className="bx bx-x"
-            style={{ color: "#212121", cursor: "pointer" }}
-          ></i>
-          <h3>Nuevo Usuario</h3>
           <FormUser
             createNewUser={createNewUser}
             updateInfoUser={updateInfoUser}

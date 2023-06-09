@@ -31,50 +31,75 @@ const FormUser = ({
     setOpenSectionCreate("hide-section-create");
   };
 
+  const handleRemoveSection = () => {
+    setOpenSectionCreate("hide-section-create");
+    reset({
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      birthday: "",
+    });
+    setUpdateInfoUser();
+  };
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="first_name">Nombre</label>
+    <>
+      <i
+        onClick={handleRemoveSection}
+        className="bx bx-x"
+        style={{ color: "#212121", cursor: "pointer" }}
+      ></i>
+      <h3>Nuevo Usuario</h3>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label htmlFor="first_name">Nombre</label>
+          <input
+            {...register("first_name")}
+            type="text"
+            placeholder="Luis José"
+            id="first_name"
+          />
+        </div>
+        <div>
+          <label htmlFor="last_name">Apellidos</label>
+          <input
+            {...register("last_name")}
+            type="text"
+            placeholder="Quispe Flores"
+            id="last_name"
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Correo</label>
+          <input
+            {...register("email")}
+            type="email"
+            placeholder="luisquispe@gmail.com"
+            id="email"
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Contraseña</label>
+          <input
+            {...register("password")}
+            type="password"
+            placeholder="**********"
+            id="password"
+          />
+        </div>
+        <div>
+          <label htmlFor="birthday">Cumpleaños</label>
+          <input {...register("birthday")} type="date" id="birthday" />
+        </div>
         <input
-          {...register("first_name")}
-          type="text"
-          placeholder="Luis José"
-          id="first_name"
+          type="submit"
+          value={`${
+            updateInfoUser ? "Guardar cambios" : "Agregar nuevo usuario"
+          }`}
         />
-      </div>
-      <div>
-        <label htmlFor="last_name">Apellidos</label>
-        <input
-          {...register("last_name")}
-          type="text"
-          placeholder="Quispe Flores"
-          id="last_name"
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Correo</label>
-        <input
-          {...register("email")}
-          type="email"
-          placeholder="luisquispe@gmail.com"
-          id="email"
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Contraseña</label>
-        <input
-          {...register("password")}
-          type="password"
-          placeholder="**********"
-          id="password"
-        />
-      </div>
-      <div>
-        <label htmlFor="birthday">Cumpleaños</label>
-        <input {...register("birthday")} type="date" id="birthday" />
-      </div>
-      <input type="submit" />
-    </form>
+      </form>
+    </>
   );
 };
 
