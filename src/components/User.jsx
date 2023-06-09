@@ -1,7 +1,8 @@
-const User = ({ user, removeUser, setDataUserRemove }) => {
+const User = ({ user, removeUser, setDataUserRemove, setClassDelete }) => {
   const handleRemoveUser = () => {
+    setDataUserRemove([user]);
     removeUser("/users/", user.id);
-    setDataUserRemove(user);
+    setClassDelete("show-message-delete");
   };
 
   return (

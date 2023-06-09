@@ -1,0 +1,6 @@
+.hide-message-delete {
+  display: none;
+}
+.show-message-delete {
+  display: fixed;
+}

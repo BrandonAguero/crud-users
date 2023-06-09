@@ -12,6 +12,7 @@ function App() {
     useFetch(baseUrl);
 
   const [dataUserRemove, setDataUserRemove] = useState();
+  const [classDelete, setClassDelete] = useState("hide-message-delete");
 
   useEffect(() => {
     getUsers("/users/");
@@ -22,20 +23,27 @@ function App() {
   return (
     <>
       <FormUser createNewUser={createNewUser} />
-      {allUsers?.map((user) => (
-        <User
-          key={user.id}
-          user={user}
-          removeUser={removeUser}
-          setDataUserRemove={setDataUserRemove}
-        />
-      ))}
-      {dataUserRemove && (
-        <UserDeleteMessage
-          dataUserRemove={dataUserRemove}
-          setDataUserRemove={setDataUserRemove}
-        />
-      )}
+      <section>
+        {allUsers?.map((user) => (
+          <User
+            key={user.id}
+            user={user}
+            removeUser={removeUser}
+            setDataUserRemove={setDataUserRemove}
+            setClassDelete={setClassDelete}
+          />
+        ))}
+      </section>
+      <div className={`${classDelete}`}>
+        {dataUserRemove?.map((dataRemoved) => (
+          <UserDeleteMessage
+            dataRemoved={dataRemoved}
+            setDataUserRemove={setDataUserRemove}
+            setClassDelete={setClassDelete}
+            classDelete={classDelete}
+          />
+        ))}
+      </div>
     </>
   );
 }

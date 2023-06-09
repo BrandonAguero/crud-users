@@ -1,20 +1,22 @@
-import { useState } from "react";
-
-const UserDeleteMessage = ({ dataUserRemove, setDataUserRemove }) => {
-  const [classDelete, setClassDelete] = useState();
-
+const UserDeleteMessage = ({
+  dataRemoved,
+  setDataUserRemove,
+  setClassDelete,
+}) => {
   const handleAcceptUserDeleted = () => {
     setDataUserRemove();
+    setClassDelete("hide-message-delete");
   };
 
   return (
-    <div>
+    <>
       <h5>Eliminar usuario</h5>
       <p>
-        El usuario {dataUserRemove.first_name} {dataUserRemove.last_name}z
+        El usuario {dataRemoved.first_name} {dataRemoved.last_name} ha sido
+        eliminado correctamente
       </p>
       <button onClick={handleAcceptUserDeleted}>Aceptar</button>
-    </div>
+    </>
   );
 };
 
