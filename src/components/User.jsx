@@ -4,6 +4,7 @@ const User = ({
   setDataUserRemove,
   setClassDelete,
   setUpdateInfoUser,
+  setOpenSectionCreate,
 }) => {
   const handleRemoveUser = () => {
     setDataUserRemove([user]);
@@ -12,6 +13,7 @@ const User = ({
   };
 
   const handleUpdateUser = () => {
+    setOpenSectionCreate("show-section-create");
     setUpdateInfoUser(user);
   };
 

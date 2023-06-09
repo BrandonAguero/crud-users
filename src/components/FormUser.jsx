@@ -6,6 +6,7 @@ const FormUser = ({
   updateInfoUser,
   setUpdateInfoUser,
   updateUser,
+  setOpenSectionCreate,
 }) => {
   const { register, handleSubmit, reset } = useForm();
 
@@ -20,7 +21,6 @@ const FormUser = ({
     } else {
       createNewUser("/users/", data);
     }
-
     reset({
       first_name: "",
       last_name: "",
@@ -28,6 +28,7 @@ const FormUser = ({
       password: "",
       birthday: "",
     });
+    setOpenSectionCreate("hide-section-create");
   };
 
   return (

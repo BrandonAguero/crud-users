@@ -13,6 +13,9 @@ function App() {
 
   const [dataUserRemove, setDataUserRemove] = useState();
   const [classDelete, setClassDelete] = useState("hide-message-delete");
+  const [openSectionCreate, setOpenSectionCreate] = useState(
+    "hide-section-create"
+  );
   const [updateInfoUser, setUpdateInfoUser] = useState();
 
   useEffect(() => {
@@ -21,14 +24,38 @@ function App() {
 
   console.log(allUsers);
 
+  const handleOpenCreateUser = () => {
+    setOpenSectionCreate("show-section-create");
+  };
+
+  const handleRemoveSection = () => {
+    setOpenSectionCreate("hide-section-create");
+  };
+
   return (
     <>
-      <FormUser
-        createNewUser={createNewUser}
-        updateInfoUser={updateInfoUser}
-        setUpdateInfoUser={setUpdateInfoUser}
-        updateUser={updateUser}
-      />
+      <header>
+        <h1>Users</h1>
+        <button onClick={handleOpenCreateUser}>
+          <i className="bx bx-plus" style={{ color: "color:#ffffff" }}></i>
+          Crear nuevo usuario
+        </button>
+        <div className={`${openSectionCreate}`}>
+          <i
+            onClick={handleRemoveSection}
+            className="bx bx-x"
+            style={{ color: "#212121", cursor: "pointer" }}
+          ></i>
+          <h3>Nuevo Usuario</h3>
+          <FormUser
+            createNewUser={createNewUser}
+            updateInfoUser={updateInfoUser}
+            setUpdateInfoUser={setUpdateInfoUser}
+            updateUser={updateUser}
+            setOpenSectionCreate={setOpenSectionCreate}
+          />
+        </div>
+      </header>
       <section>
         {allUsers?.map((user) => (
           <User
@@ -38,6 +65,7 @@ function App() {
             setDataUserRemove={setDataUserRemove}
             setClassDelete={setClassDelete}
             setUpdateInfoUser={setUpdateInfoUser}
+            setOpenSectionCreate={setOpenSectionCreate}
           />
         ))}
       </section>

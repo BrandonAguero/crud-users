@@ -4,3 +4,9 @@
 .show-message-delete {
   display: fixed;
 }
+.hide-section-create {
+  display: none;
+}
+.show-section-create {
+  display: fixed;
+}
