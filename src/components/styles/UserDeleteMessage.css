@@ -1,0 +1,36 @@
+.show-message-delete > div {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+  width: 90%;
+  padding: 1em;
+  max-width: 40rem;
+}
+.show-message-delete > div i {
+  font-size: 3rem;
+  align-self: flex-end;
+}
+.show-message-delete > div h5 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: var(--title-font);
+  margin-bottom: 1rem;
+}
+.show-message-delete > div p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+.show-message-delete > div p span {
+  font-weight: 600;
+}
+.show-message-delete > div button {
+  background-color: #555a88;
+  border: none;
+  padding: 1em;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}

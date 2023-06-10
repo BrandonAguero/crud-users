@@ -1,3 +1,5 @@
+import "./styles/UserDeleteMessage.css";
+
 const UserDeleteMessage = ({
   dataRemoved,
   setDataUserRemove,
@@ -21,8 +23,11 @@ const UserDeleteMessage = ({
       ></i>
       <h5>Eliminar usuario</h5>
       <p>
-        El usuario {dataRemoved.first_name} {dataRemoved.last_name} ha sido
-        eliminado correctamente
+        El usuario{" "}
+        <span>
+          {dataRemoved.first_name} {dataRemoved.last_name}
+        </span>{" "}
+        ha sido eliminado correctamente
       </p>
       <button onClick={handleAcceptUserDeleted}>Aceptar</button>
     </>

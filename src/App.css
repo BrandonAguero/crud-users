@@ -2,7 +2,17 @@
   display: none;
 }
 .show-message-delete {
-  display: fixed;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(0.8px);
+  background-color: #302f2f35;
+  top: 0;
 }
 .hide-section-create {
   display: none;
@@ -63,6 +73,12 @@
   height: max-content;
   display: flex;
   gap: 2rem;
+}
+.main .main__div h2 {
+  font-size: 3rem;
+  height: 10rem;
+  font-weight: 600;
+  text-align: center;
 }
 .main .main__div > section {
   min-width: 100%;
