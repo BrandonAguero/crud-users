@@ -56,7 +56,9 @@ const FormUser = ({
         <div>
           <label htmlFor="first_name">Nombre</label>
           <input
-            {...register("first_name")}
+            {...register("first_name", {
+              required: true,
+            })}
             type="text"
             placeholder="Luis José"
             id="first_name"
@@ -65,7 +67,7 @@ const FormUser = ({
         <div>
           <label htmlFor="last_name">Apellidos</label>
           <input
-            {...register("last_name")}
+            {...register("last_name", { required: true })}
             type="text"
             placeholder="Quispe Flores"
             id="last_name"
@@ -74,7 +76,7 @@ const FormUser = ({
         <div>
           <label htmlFor="email">Correo</label>
           <input
-            {...register("email")}
+            {...register("email", { required: true })}
             type="email"
             placeholder="luisquispe@gmail.com"
             id="email"
@@ -83,7 +85,7 @@ const FormUser = ({
         <div>
           <label htmlFor="password">Contraseña</label>
           <input
-            {...register("password")}
+            {...register("password", { required: true })}
             type="password"
             placeholder="**********"
             id="password"
@@ -91,7 +93,11 @@ const FormUser = ({
         </div>
         <div>
           <label htmlFor="birthday">Cumpleaños</label>
-          <input {...register("birthday")} type="date" id="birthday" />
+          <input
+            {...register("birthday", { required: true })}
+            type="date"
+            id="birthday"
+          />
         </div>
         <input
           type="submit"
