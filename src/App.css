@@ -163,14 +163,17 @@
     height: 100vh;
     gap: 6rem;
     justify-items: center;
+    margin-top: 8rem;
   }
   .main .main__div > section {
     min-width: 32rem;
     width: 100%;
     max-width: 43rem;
     height: 100%;
-    max-height: 33rem;
+    max-height: 42rem;
+    padding: 2em;
     justify-content: space-between;
+    border: 0.1em solid #e5e5e5;
   }
 }
 @media screen and (min-width: 572px) {
@@ -179,5 +182,10 @@
     padding: 0.5em;
     justify-content: center;
     gap: 1rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .main .main__div {
+    column-gap: 10rem;
   }
 }
