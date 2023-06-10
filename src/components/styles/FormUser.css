@@ -6,6 +6,7 @@
   height: 90%;
   padding: 1em;
   max-height: 52rem;
+  max-width: 40rem;
 }
 .show-section-create > div > i {
   font-size: 3rem;
@@ -91,5 +92,43 @@
     padding: 1em;
     cursor: pointer;
     font-size: 1.5rem;
+  }
+}
+@media screen and (min-height: 1000px) {
+  .show-section-create > div {
+    padding: 2em;
+    max-height: 85rem;
+    max-width: 55rem;
+  }
+  .show-section-create > div > i {
+    font-size: 4rem;
+  }
+  .show-section-create > div h3 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .show-section-create > div form {
+    gap: 3rem;
+  }
+  .show-section-create > div form div {
+    gap: 1rem;
+  }
+  .show-section-create > div form div label {
+    font-size: 2rem;
+  }
+  .show-section-create > div form div input {
+    padding: 1em;
+    font-size: 2rem;
+  }
+  .show-section-create > div form div input::placeholder {
+    font-size: 2rem;
+  }
+  .show-section-create > div form div input:focus {
+    border: none;
+    outline: 0.15em solid #555a88;
+  }
+  .show-section-create > div form > input {
+    padding: 1.5em;
+    font-size: 2rem;
   }
 }
