@@ -84,7 +84,16 @@
   line-height: 2rem;
   color: #302f2f;
   font-family: var(--paragraph-font);
+  word-wrap: break-word;
+  height: 5rem;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.main .main__div > section p::-webkit-scrollbar {
+  display: none;
+}
+
 .main .main__div > section > div:last-of-type {
   display: flex;
   justify-content: flex-end;
@@ -127,6 +136,7 @@
   .main .main__div > section h5 {
     font-size: 3rem;
     line-height: 3.5rem;
+    min-height: 7rem;
   }
   .main .main__div > section h6 {
     font-size: 2.5rem;
@@ -144,16 +154,23 @@
   }
 }
 @media screen and (min-width: 500px) {
+  .main {
+    margin-top: 8rem;
+  }
   .main .main__div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    height: max-content;
+    height: 100vh;
     gap: 6rem;
     justify-items: center;
   }
   .main .main__div > section {
     min-width: 32rem;
+    width: 100%;
     max-width: 43rem;
+    height: 100%;
+    max-height: 33rem;
+    justify-content: space-between;
   }
 }
 @media screen and (min-width: 572px) {

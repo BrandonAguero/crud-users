@@ -25,6 +25,7 @@ function App() {
   const handleOpenCreateUser = () => {
     setOpenSectionCreate("show-section-create");
   };
+  console.log(allUsers);
 
   return (
     <>
@@ -39,17 +40,21 @@ function App() {
       </header>
       <main className="main">
         <div className="main__div">
-          {allUsers?.map((user) => (
-            <User
-              key={user.id}
-              user={user}
-              removeUser={removeUser}
-              setDataUserRemove={setDataUserRemove}
-              setClassDelete={setClassDelete}
-              setUpdateInfoUser={setUpdateInfoUser}
-              setOpenSectionCreate={setOpenSectionCreate}
-            />
-          ))}
+          {allUsers?.length ? (
+            allUsers.map((user) => (
+              <User
+                key={user.id}
+                user={user}
+                removeUser={removeUser}
+                setDataUserRemove={setDataUserRemove}
+                setClassDelete={setClassDelete}
+                setUpdateInfoUser={setUpdateInfoUser}
+                setOpenSectionCreate={setOpenSectionCreate}
+              />
+            ))
+          ) : (
+            <h2>Por el momento no hay usuarios registrados</h2>
+          )}
         </div>
       </main>
       <div className={`${classDelete}`}>
