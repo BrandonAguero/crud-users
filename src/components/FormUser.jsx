@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import "./styles/FormUser.css";
 
 const FormUser = ({
   createNewUser,
@@ -50,7 +51,7 @@ const FormUser = ({
         className="bx bx-x"
         style={{ color: "#212121", cursor: "pointer" }}
       ></i>
-      <h3>Nuevo Usuario</h3>
+      <h3>{updateInfoUser ? "Editar Usuario" : "Nuevo Usuario"}</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="first_name">Nombre</label>

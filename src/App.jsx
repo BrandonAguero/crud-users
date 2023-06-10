@@ -69,13 +69,15 @@ function App() {
         ))}
       </div>
       <div className={`${openSectionCreate}`}>
-        <FormUser
-          createNewUser={createNewUser}
-          updateInfoUser={updateInfoUser}
-          setUpdateInfoUser={setUpdateInfoUser}
-          updateUser={updateUser}
-          setOpenSectionCreate={setOpenSectionCreate}
-        />
+        <div>
+          <FormUser
+            createNewUser={createNewUser}
+            updateInfoUser={updateInfoUser}
+            setUpdateInfoUser={setUpdateInfoUser}
+            updateUser={updateUser}
+            setOpenSectionCreate={setOpenSectionCreate}
+          />
+        </div>
       </div>
     </>
   );

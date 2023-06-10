@@ -1,0 +1,95 @@
+.show-section-create > div {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+  width: 90%;
+  height: 90%;
+  padding: 1em;
+  max-height: 52rem;
+}
+.show-section-create > div > i {
+  font-size: 3rem;
+  align-self: flex-end;
+}
+.show-section-create > div h3 {
+  font-size: 2rem;
+  font-family: var(--title-font);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.show-section-create > div form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.show-section-create > div form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.show-section-create > div form div label {
+  font-size: 1.5rem;
+  font-family: var(--title-font);
+  font-weight: 400;
+}
+.show-section-create > div form div input {
+  padding: 0.5em;
+  font-size: 1.5rem;
+}
+.show-section-create > div form div input::placeholder {
+  font-family: var(--paragraph-font);
+  font-size: 1.5rem;
+}
+.show-section-create > div form div input:focus {
+  border: none;
+  outline: 0.15em solid #555a88;
+}
+.show-section-create > div form > input {
+  width: 80%;
+  align-self: center;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: #555a88;
+  color: var(--first-color);
+  border: none;
+}
+@media screen and (max-height: 565px) {
+  .show-section-create > div {
+    height: 95%;
+  }
+  .show-section-create > div > i {
+    font-size: 2.5rem;
+  }
+  .show-section-create > div h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .show-section-create > div form {
+    gap: 1rem;
+  }
+  .show-section-create > div form div {
+    gap: 0.5rem;
+  }
+  .show-section-create > div form div label {
+    font-size: 1.7rem;
+    font-weight: 400;
+  }
+  .show-section-create > div form div input {
+    padding: 0.5em;
+    font-size: 1.5rem;
+  }
+  .show-section-create > div form div input::placeholder {
+    font-family: var(--paragraph-font);
+    font-size: 1.5rem;
+  }
+  .show-section-create > div form div input:focus {
+    border: none;
+    outline: 0.15em solid #555a88;
+  }
+  .show-section-create > div form > input {
+    padding: 1em;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+}
