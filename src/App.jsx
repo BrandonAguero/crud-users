@@ -6,7 +6,7 @@ import User from "./components/User";
 import UserDeleteMessage from "./components/UserDeleteMessage";
 
 function App() {
-  const baseUrl = "https://users-crud.academlo.tech";
+  const baseUrl = "https://users-crud-5t3r.onrender.com/api/v1";
 
   const [allUsers, getUsers, createNewUser, removeUser, updateUser] =
     useFetch(baseUrl);
